@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Hello world</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Estación meteorológica con Arduino</h1>
+
+      <div class="card">
+        <div class="headerCard">
+          <a>
+            <h2 class="nameCity" id="nameCity">city.name</h2>
+          </a>
+          <span id="country">city.country</span>
+          <span class="buttonClose" style="display: none"> X </span>
+        </div>
+        <div class="infoContainer">
+          <figure class="imgContainer">
+            <img id="imgWeather" src="" alt="Clima Icono" />
+            <span id="weather">city.weather</span>
+          </figure>
+          <div>
+            <span id="humidity">
+              Humidity <br />
+              city.humidity%
+            </span>
+            <span id="pressure">
+              Pressure <br />
+              city.pressure mb
+            </span>
+          </div>
+          <h3>TEMPERATURA</h3>
+          <div>
+            <span id="temperatureMin">
+              Min <br />
+              city.min°
+            </span>
+            <span id="temperatureMax">
+              Max <br />
+              city.max°
+            </span>
+          </div>
+
+          <h3>COORDENADAS</h3>
+          <div>
+            <span id="latitude">
+              Latitude <br />
+              city.latitude
+            </span>
+            <span id="length">
+              Length <br />
+              city.length
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const socket = io();
+      socket.on('data', function (data) {
+        console.log(data);
+
+        document.getElementById('humidity').innerHTML = `Humedad <br />
+        ${data.humidity}%`;
+
+        document.getElementById('pressure').innerHTML = `Precipitación <br />
+        ${data.pressure} mb`;
+
+        document.getElementById('temperatureMin').innerHTML = `Min <br />
+        ${data.temperatureC2}°`;
+        document.getElementById('temperatureMax').innerHTML = `Max <br />
+        ${data.temperatureC}°`;
+
+        document.getElementById('latitude').innerHTML = `Latitud <br />
+        ${data.latitude}`;
+
+        document.getElementById('length').innerHTML = `Longitud <br />
+        ${data.length}`;
+
+        document.getElementById('weather').innerHTML = data.weatherDescription;
+        document.getElementById('country').innerHTML = data.country;
+        document.getElementById('nameCity').innerHTML = data.name;
+
+        document.getElementById(
+          'imgWeather'
+        ).src = `http://openweathermap.org/img/wn/${data.img}@2x.png`;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@1,700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Asap', 'Numhead', -apple-system, BlinkMacSystemFont,
+        'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+        'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: url('https://wallpaperaccess.com/full/25571.jpg');
+    background-position: center;
+    background-size: cover;
+    color: white;
+}
+
+h3 {
+    margin: 2px 0;
+    text-align: center;
+}
+
+.card {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    width: 20em;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 20px;
+    color: white;
+    padding: 10px;
+    -webkit-box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.75);
+}
+
+.buttonClose {
+    justify-self: end;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    height: 2.3em;
+    width: 2em;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    color: white;
+    position: absolute;
+    right: 0;
+    top: 2px;
+}
+
+.buttonClose:hover {
+    background-color: rgba(255, 0, 0, 0.8);
+}
+
+.headerCard {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.headerCard a {
+    margin: 0;
+}
+
+.nameCity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-size: 2rem;
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.infoContainer div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.infoContainer span {
+    padding: 5px;
+    font-size: 1rem;
+}
+
+.infoContainer h3 {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    width: 80%;
+}
+
+.infoContainer div {
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 50%;
+}
+
+.imgContainer {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.imgContainer img {
+    height: 80px;
+}
+
+.imgContainer span {
+    position: absolute;
+    bottom: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
